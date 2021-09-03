@@ -1,0 +1,25 @@
+server:
+  port: ${port:9091}
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/SpringCloud-Study
+    username: murphy
+    password: xmf123456
+  application:
+    name: User-Service
+mybatis:
+  type-aliases-package: com.murphy.pojo
+eureka:
+  client:
+    service-url:
+     defaultZone: http://127.0.0.1:9093/eureka
+  instance:
+    # 更倾向于IP地址，而不是主机名
+    prefer-ip-address: true
+    # IP地址
+    ip-address: 127.0.0.1
+    # 续约间隔 - 默认30S
+    lease-renewal-interval-in-seconds: 10
+    # 服务的失效时间 - 默认90S
+    lease-expiration-duration-in-seconds: 30
